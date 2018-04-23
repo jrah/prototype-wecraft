@@ -1,0 +1,24 @@
+{
+  "extends": "stylelint-config-standard",
+  "plugins": ["stylelint-scss"],
+  "rules": {
+    "indentation": null,
+    "declaration-colon-space-before": null,
+    "number-leading-zero": null,
+    "selector-pseudo-element-colon-notation": null,
+    "at-rule-no-unknown": null,
+    "block-opening-brace-space-before": null,
+    "color-hex-length": null,
+    "number-no-trailing-zeros": null,
+    "selector-list-comma-newline-after": null,
+    "declaration-block-trailing-semicolon": null,
+    "color-hex-case": null,
+    "max-empty-lines": null,
+    "at-rule-empty-line-before": null,
+    "no-missing-end-of-source-newline": null,
+    "block-closing-brace-empty-line-before": null,
+    "declaration-empty-line-before": null,
+    "rule-empty-line-before": null,
+    "function-whitespace-after": null
+  }
+}
