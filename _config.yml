@@ -31,6 +31,11 @@ plugins:
   - jekyll-feed
   - jekyll-autoprefixer
 
+sass:
+    load_paths:
+        - _sass
+        - node_modules/tachyons-sass/scss/
+
 
 uncss:
   stylesheets:            # a list of stylesheets to be processed; mandatory
@@ -41,7 +46,7 @@ uncss:
   compress: true          # compress resulting css with sass; default: false
   ignore:                 # always keep rules for these selectors; default: none
     - ".is-loading"
-    - "#id"
+    - "#idprototype-kenpro"
   media:                  # additional media queries to consider; default: undefined
     - print
   timeout: 30             # how long to wait for the JS to be loaded; default: undefined
