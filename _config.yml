@@ -32,6 +32,20 @@ plugins:
   - jekyll-autoprefixer
 
 
+uncss:
+  stylesheets:            # a list of stylesheets to be processed; mandatory
+    - assets/css/main.css
+  files:                  # html files to consider, globs are supported; default: **/*.html
+    - "**/*.html"
+    - "**/*.htm"
+  compress: true          # compress resulting css with sass; default: false
+  ignore:                 # always keep rules for these selectors; default: none
+    - ".is-loading"
+    - "#id"
+  media:                  # additional media queries to consider; default: undefined
+    - print
+  timeout: 30             # how long to wait for the JS to be loaded; default: undefined
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
