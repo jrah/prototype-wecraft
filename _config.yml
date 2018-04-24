@@ -47,3 +47,8 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - node_modules
+  - gulpfile.js
+  - package.json
+  - yarn-error.log
+  - yarn.lock
+  - README.md
