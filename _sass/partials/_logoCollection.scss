@@ -1,0 +1,13 @@
+.logoCollection {
+  display: flex;
+  flex-wrap: wrap;
+  &-item {
+  @include mq(md) {
+    flex: calc(100% / 3);
+  }
+  @include mq(l) {
+    flex: calc(100% / 6)
+  }
+  flex: calc(100% / 2);
+  }
+}

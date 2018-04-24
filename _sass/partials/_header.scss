@@ -1,0 +1,64 @@
+%toggle {
+  cursor: pointer;
+  // user-select: none;
+  // z-index: 4;
+}
+
+.navMenu {
+  @include mq(ns) {
+    flex-direction: row;
+    justify-content: flex-end;
+    position: relative;
+    padding: 0;
+    background-color: inherit;
+    margin: 0;
+    height: inherit;
+    transform: none;
+    box-shadow: none;
+  }
+  transform: translateY(-100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: transform .4s cubic-bezier(.2, 1, .3, 1);
+  box-shadow: inset 0 -4px 0 $red;
+
+  &-isOpen {
+    // make toggle icon #fff when clicked
+    & + .navMenu-toggle {
+      color: $white;
+    }
+    padding: 0;
+    top: 0;
+    left: 0;
+    background: linear-gradient(205deg, rgba($near-black, 1), rgba(darken($near-black, 5%), .9));
+    margin: 0;
+    height: 100vh;
+    overflow-y: scroll;
+    transform: translateY(0);
+  }
+
+  &-item {
+    &-top {
+      @include mq(ns) {
+        font-size: $font-size-5;
+        display: inline-block;
+        margin: 0 1rem;
+      }
+      font-size: $font-size-3;
+      margin: 1rem 0;
+    }
+  }
+
+  &-toggle {
+    @extend %toggle;
+    @include mq(ns) {
+      display: none;
+    }
+  }
+}

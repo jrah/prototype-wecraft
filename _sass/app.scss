@@ -1,0 +1,141 @@
+// init
+$purple: #1e273b;
+$light-purple: #575f73;
+$navy: #181e2d;
+
+
+$primary: #82bc00;
+
+@import "init";
+ //  External Library Includes
+ @import 'normalize';
+
+
+//  Variables
+//  Importing here will allow you to override any variables in the modules
+
+@import 'variables';
+
+//  Debugging
+@import 'debug-children';
+@import 'debug-grid';
+
+//  Uncomment out the line below to help debug layout issues
+//  @import 'debug';
+
+ //  Modules
+ @import 'box-sizing';
+ @import 'aspect-ratios';
+ @import 'images';
+ @import 'background-size';
+ @import 'background-position';
+ @import 'outlines';
+ @import 'borders';
+ @import 'border-colors';
+ @import 'border-radius';
+ @import 'border-style';
+ @import 'border-widths';
+ @import 'box-shadow';
+ @import 'code';
+ @import 'coordinates';
+ @import 'clears';
+ @import 'display';
+ @import 'flexbox';
+ @import 'floats';
+ @import 'font-family';
+ @import 'font-style';
+ @import 'font-weight';
+ @import 'forms';
+ @import 'heights';
+ @import 'letter-spacing';
+ @import 'line-height';
+ @import 'links';
+ @import 'lists';
+ @import 'max-widths';
+ @import 'widths';
+ @import 'overflow';
+ @import 'position';
+ @import 'opacity';
+ @import 'rotations';
+ @import 'skins';
+ @import 'skins-pseudo';
+ @import 'spacing';
+ @import 'negative-margins';
+ @import 'tables';
+ @import 'text-decoration';
+ @import 'text-align';
+ @import 'text-transform';
+ @import 'type-scale';
+ @import 'typography';
+ @import 'utilities';
+ @import 'visibility';
+ @import 'white-space';
+ @import 'vertical-align';
+ @import 'hovers';
+ @import 'z-index';
+ @import 'nested';
+ @import 'styles';
+
+@import "base/elemental";
+@import "partials/header";
+@import "partials/logoCollection";
+
+
+.bg-primary  { background-color: $primary }
+.primary  { color: $primary }
+
+
+.hide {
+  display: none;
+}
+
+
+.overlay {
+  background-image: linear-gradient(205deg, rgba($purple, .9), rgba(darken($purple, 50%), .9));
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.gradient-blue {
+  background-image: radial-gradient(circle at 49% 107%,$purple, darken(desaturate($purple, 1.1), 3.1));
+}
+
+.position-fixed {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.flex-reverse-pattern {
+  &:nth-of-type(2n) {
+    flex-direction: row-reverse;
+  }
+}
+
+.h6 {
+  height: 24rem;
+  @include mq(ns) {
+    &-ns {
+      height: 24rem;
+    }
+  }
+}
+
+
+.min-vh-50 {
+  min-height: 50vh;
+}
+
+body {
+  background: linear-gradient(to right, #0b486b, #f56217);
+}
+
+.used {
+  color: blue;
+}
+
+.unsed {
+  color: red;
+}

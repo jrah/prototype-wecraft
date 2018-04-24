@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+// base variable
+
+$orange:  #ff6300;
+$gold:  #ffb700;
+$yellow:  #ffd700;
+$red: #E7040F;
+$green: #19A974;
+
+$primary: $red !default;
+$warning: $gold !default;
+$negative: $red !default;
+$positive: $green !default;
+
+$mqs: (
+  ns: 50em,
+  l: 75em,
+) !default;
+
+$breakpoint-not-small: "screen and (min-width: 50em)";
+$breakpoint-medium: "screen and (min-width: 50em) and (max-width: 75em)";
+$breakpoint-large: "screen and (min-width: 75em)";
+
+@mixin mq($mq) {
+  @if $mq == ns {
+    @media screen and (min-width: #{map-get($mqs, ns)}) {
+      @content;
+    }
+  } @if $mq == m {
+      @media screen and (min-width: #{map-get($mqs, ns)}) and (max-width: #{map-get($mqs, l)}) {
+        @content;
+      }
+    } @if $mq == l {
+      @media screen and (min-width: #{map-get($mqs, l)}) {
+        @content;
+      }
+    }
+}
+
+@mixin center($argument: auto) {
+  margin-left: $argument;
+  margin-right: $argument;
+}
+
+.mwc {
+  margin-left: auto;
+  margin-right: auto;
+  max-width:  100%;
+}
+
+@each $size, $width in $mqs {
+
+  .mwc {
+    @if $size == ns {
+      @media screen and (min-width: #{map-get($mqs, ns)}) {
+        margin-left: auto;
+        margin-right: auto;
+        max-width:  55em;
+      }
+    }
+
+    @if $size == l {
+      @media screen and (min-width: #{map-get($mqs, l)}) {
+        margin-left: auto;
+        margin-right: auto;
+        max-width:  72em;
+      }
+    } @else {
+      @media screen and (min-width: #{map-get($mqs, ns)}) and (max-width: #{map-get($mqs, l)}) {
+        margin-left: auto;
+        margin-right: auto;
+        max-width:  65em;
+      }
+    }
+  }
+}
