@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: test-repo
   branch: master # Branch to update (master by default)
 
 media_folder: "images" # Folder where user uploaded files should go
@@ -16,9 +16,7 @@ collections: # A list of collections the CMS should be able to edit
 
   - name: "settings"
     label: "Settings"
-    folder: "_data"
     delete: true # Prevent users from deleting documents in this collection
-    create: true
     files:
       - name: "general"
         label: "Site Settings"
