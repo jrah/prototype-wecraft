@@ -6,6 +6,14 @@ media_folder: "images" # Folder where user uploaded files should go
 public_folder: "/images"
 
 collections: # A list of collections the CMS should be able to edit
+  - name: "faq" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "FAQ" # Used in the UI
+    folder: "_faqs"
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Question", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Answer", name: "body", widget: "markdown"}
+
   - name: "settings"
     label: "Settings"
     delete: false # Prevent users from deleting documents in this collection
@@ -16,30 +24,29 @@ collections: # A list of collections the CMS should be able to edit
         label: "Site Settings"
         file: "_data/settings.yml"
         description: "General Site Settings"
+        create: true
         fields:
-          - {label: "Meta description", name: meta_description, widget: "text"}
-          - {label: "Site title", name: site_title, widget: "text"}
-  - name: "section" # Used in routes, ie.: /admin/collections/:slug/edit
-    file: "_data/sections.yml"
-    label: "Sections" # Used in the UI
-    folder: "_section"
-    widget: "list"
-    create: true # Allow users to create new documents in this collection
-    fields: # The fields each document in this collection have
-      - {label: "Title", name: "string", widget: "string", required: false}
-      - {label: "Heading", name: "text", widget: "text", required: false}
-      - {label: "Background image", name: "background_image", widget: "image", required: false}
-      - {label: "Image", name: "image", widget: "image", required: false}
-      - {label: "Button text", name: "button_text", widget: "text", required: false}
-      - {label: "Button href", name: "button_href", widget: "text", required: false}
-      - label: "Sections"
-        name: "Sections"
-        widget: "list"
+          - {label: "Global title", name: "site_title", widget: "string"}
+          - label: "Post Settings"
+            name: posts
+            widget: "object"
+            fields:
+              - {label: "Number of posts on frontpage", name: front_limit, widget: number}
+              - {label: "Default Author", name: author, widget: string}
+              - {label: "Default Thumbnail", name: thumb, widget: image, class: "thumb"}
+
+      - name: "authors"
+        label: "Authors"
+        file: "_data/authors.yml"
+        description: "Author descriptions"
         fields:
-          - {label: "Type", name: "select", widget: "select", options: ["Text splash", "Three piece", "Testimonials", "Tiles", "image splash", "faq"]}
-          - {label: "Title", name: "string", widget: "string"}
-          - {label: "Markdown", name: "markdown", widget: "markdown"}
-          - {label: "Image", name: "image", widget: "image"}
+          - name: authors
+            label: Authors
+            label_singular: "Author"
+            widget: list
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Description", name: "description", widget: "markdown"}
 
   - name: "kitchenSink" # all the things in one entry, for documentation and quick testing
     label: "Kitchen Sink"
