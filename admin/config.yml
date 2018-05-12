@@ -35,13 +35,13 @@ collections: # A list of collections the CMS should be able to edit
               - {label: "Default Author", name: author, widget: string}
               - {label: "Default Thumbnail", name: thumb, widget: image, class: "thumb"}
 
-      - name: "authors"
-        label: "Authors"
+      - name: "sections"
+        label: "Sections"
         file: "_data/sections.yml"
         description: "Author descriptions"
         fields:
-          - name: authors
-            label: Authors
+          - name: sections
+            label: Sections
             label_singular: "Author"
             widget: list
             fields:
