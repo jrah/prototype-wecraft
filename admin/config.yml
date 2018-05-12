@@ -40,8 +40,8 @@ collections: # A list of collections the CMS should be able to edit
         file: "_data/sections.yml"
         description: "Website sections"
         fields:
-          - {label: "Title", name: "string", widget: "string", required: false}
-          - {label: "Heading", name: "text", widget: "text", required: false}
+          - {label: "Title", name: "title", widget: "string", required: false}
+          - {label: "Heading", name: "heading", widget: "text", required: false}
           - {label: "Background image", name: "background_image", widget: "image", required: false}
           - {label: "Image", name: "image", widget: "image", required: false}
           - {label: "Button text", name: "button_text", widget: "text", required: false}
@@ -51,8 +51,8 @@ collections: # A list of collections the CMS should be able to edit
             label_singular: "Section"
             widget: list
             fields:
-              - {label: "Type", name: "select", widget: "select", options: ["Text splash", "Three piece", "Testimonials", "Tiles", "image splash", "faq"]}
-              - {label: "Title", name: "string", widget: "string"}
+              - {label: "Type", name: "type", widget: "select", options: ["Text splash", "Three piece", "Testimonials", "Tiles", "image splash", "faq"]}
+              - {label: "Title", name: "title", widget: "string"}
               - {label: "Markdown", name: "markdown", widget: "markdown"}
               - {label: "Image", name: "image", widget: "image"}
 
