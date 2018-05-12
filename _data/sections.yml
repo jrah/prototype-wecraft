@@ -5,7 +5,19 @@ image: /images/screencapture-wecraft-netlify-admin-2018-05-12-03_23_53.png
 button_text: Button text
 button_href: 'mailto:james@diversitea.co'
 sections:
-  - markdown: Three Piece text
+  - markdown: |-
+      ![](/images/noun_1573360.svg)
+
+      ##Three Piece text
+      Text below
+      ===
+      ![](/images/noun_1573360.svg)
+
+      ##Three Piece text
+      Text below
+      ===
     type: Three piece
   - markdown: Text splash content
-    type: Testimonials
+    title: Text splash
+    image: /images/rendra-diardjo-221782-unsplash.jpg
+    type: image splash
