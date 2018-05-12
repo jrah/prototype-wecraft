@@ -1,9 +1,11 @@
-string: Title
-text: aejdslk
+title: WeCraft Landing Page
+heading: This is the landing page
+background_image: /images/rendra-diardjo-221782-unsplash.jpg
+image: /images/screencapture-wecraft-netlify-admin-2018-05-12-03_23_53.png
+button_text: Button text
+button_href: 'mailto:james@diversitea.co'
 sections:
   - markdown: Three Piece text
-    select: Three piece
-    string: Three Piece
+    type: Three piece
   - markdown: Text splash content
-    select: Text splash
-    string: Text Splash
+    type: Testimonials
