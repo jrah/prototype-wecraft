@@ -1,5 +1,5 @@
 backend:
-  name: test-repo
+  name: git-gateway
   branch: master # Branch to update (master by default)
 
 media_folder: "images" # Folder where user uploaded files should go
