@@ -35,26 +35,26 @@ collections: # A list of collections the CMS should be able to edit
               - {label: "Default Author", name: author, widget: string}
               - {label: "Default Thumbnail", name: thumb, widget: image, class: "thumb"}
 
-      - name: "sections"
-        label: "Sections"
-        file: "_data/sections.yml"
-        description: "Website sections"
+  - name: "sections"
+    label: "Sections"
+    file: "_data/sections.yml"
+    description: "Website sections"
+    fields:
+      - {label: "Title", name: "title", widget: "string", required: false}
+      - {label: "Heading", name: "heading", widget: "text", required: false}
+      - {label: "Background image", name: "background_image", widget: "image", required: false}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Button text", name: "button_text", widget: "text", required: false}
+      - {label: "Button href", name: "button_href", widget: "text", required: false}
+      - name: sections
+        label: Sections
+        label_singular: "Section"
+        widget: list
         fields:
-          - {label: "Title", name: "title", widget: "string", required: false}
-          - {label: "Heading", name: "heading", widget: "text", required: false}
-          - {label: "Background image", name: "background_image", widget: "image", required: false}
-          - {label: "Image", name: "image", widget: "image", required: false}
-          - {label: "Button text", name: "button_text", widget: "text", required: false}
-          - {label: "Button href", name: "button_href", widget: "text", required: false}
-          - name: sections
-            label: Sections
-            label_singular: "Section"
-            widget: list
-            fields:
-              - {label: "Type", name: "type", widget: "select", options: ["Text splash", "Three piece", "Testimonials", "Tiles", "image splash", "faq"]}
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Markdown", name: "markdown", widget: "markdown"}
-              - {label: "Image", name: "image", widget: "image"}
+          - {label: "Type", name: "type", widget: "select", options: ["Text splash", "Three piece", "Testimonials", "Tiles", "image splash", "faq"]}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Markdown", name: "markdown", widget: "markdown"}
+          - {label: "Image", name: "image", widget: "image"}
 
   - name: "kitchenSink" # all the things in one entry, for documentation and quick testing
     label: "Kitchen Sink"
