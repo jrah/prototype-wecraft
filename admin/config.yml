@@ -20,7 +20,7 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "Title", name: "title", widget: "string", required: false}
           - {label: "Heading", name: "heading", widget: "text", required: false}
           - {label: "Background image", name: "background_image", widget: "image", required: false}
-          - {label: "Image", name: "image", widget: "image", required: false}
+          - {label: "Web browser preview image", name: "browser_preview", widget: "image", required: false}
           - {label: "Button text", name: "button_text", widget: "text", required: false}
           - {label: "Button href", name: "button_href", widget: "text", required: false}
           - name: sections
