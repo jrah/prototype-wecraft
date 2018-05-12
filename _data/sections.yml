@@ -1,3 +1,7 @@
 sections:
-  - description: waefsderfa
-    name: sdwaef
+  - markdown: Three Piece text
+    select: Three piece
+    string: Three Piece
+  - markdown: Text splash content
+    select: Text splash
+    string: Text Splash
