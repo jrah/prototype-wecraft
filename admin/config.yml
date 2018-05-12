@@ -6,28 +6,6 @@ media_folder: "images" # Folder where user uploaded files should go
 public_folder: "/images"
 
 collections: # A list of collections the CMS should be able to edit
-  - name: "sections"
-    label: "Sections"
-    folder: "_data"
-    create: true
-    file: "_data/sections.yml"
-    description: "Website sections"
-    fields:
-      - {label: "Title", name: "title", widget: "string", required: false}
-      - {label: "Heading", name: "heading", widget: "text", required: false}
-      - {label: "Background image", name: "background_image", widget: "image", required: false}
-      - {label: "Image", name: "image", widget: "image", required: false}
-      - {label: "Button text", name: "button_text", widget: "text", required: false}
-      - {label: "Button href", name: "button_href", widget: "text", required: false}
-      - name: sections
-        label: Sections
-        label_singular: "Section"
-        widget: list
-        fields:
-          - {label: "Type", name: "type", widget: "select", options: ["Text splash", "Three piece", "Testimonials", "Tiles", "image splash", "faq"]}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Markdown", name: "markdown", widget: "markdown"}
-          - {label: "Image", name: "image", widget: "image"}
   - name: "faq" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "FAQ" # Used in the UI
     folder: "_faqs"
@@ -56,6 +34,27 @@ collections: # A list of collections the CMS should be able to edit
               - {label: "Number of posts on frontpage", name: front_limit, widget: number}
               - {label: "Default Author", name: author, widget: string}
               - {label: "Default Thumbnail", name: thumb, widget: image, class: "thumb"}
+
+      - name: "sections"
+        label: "Sections"
+        file: "_data/sections.yml"
+        description: "Website sections"
+        fields:
+          - {label: "Title", name: "string", widget: "string", required: false}
+          - {label: "Heading", name: "text", widget: "text", required: false}
+          - {label: "Background image", name: "background_image", widget: "image", required: false}
+          - {label: "Image", name: "image", widget: "image", required: false}
+          - {label: "Button text", name: "button_text", widget: "text", required: false}
+          - {label: "Button href", name: "button_href", widget: "text", required: false}
+          - name: sections
+            label: Sections
+            label_singular: "Section"
+            widget: list
+            fields:
+              - {label: "Type", name: "select", widget: "select", options: ["Text splash", "Three piece", "Testimonials", "Tiles", "image splash", "faq"]}
+              - {label: "Title", name: "string", widget: "string"}
+              - {label: "Markdown", name: "markdown", widget: "markdown"}
+              - {label: "Image", name: "image", widget: "image"}
 
   - name: "kitchenSink" # all the things in one entry, for documentation and quick testing
     label: "Kitchen Sink"
