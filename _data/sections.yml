@@ -1,9 +1,9 @@
-title: Title
-heading: Heading
+string: wefwqaerfqa
+text: aejdslk
 sections:
   - markdown: Three Piece text
-    title: Text splash
-    type: Text splash
+    select: Three piece
+    string: Three Piece
   - markdown: Text splash content
-    title: Testimonials
-    type: Testimonials
+    select: Text splash
+    string: Text Splash
