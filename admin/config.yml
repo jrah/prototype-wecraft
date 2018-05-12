@@ -6,26 +6,32 @@ media_folder: "images" # Folder where user uploaded files should go
 public_folder: "/images"
 
 collections: # A list of collections the CMS should be able to edit
-  - name: "sections"
-    label: "Sections"
-    file: "_data/sections.yml"
-    description: "Website sections"
-    fields:
-      - {label: "Title", name: "title", widget: "string", required: false}
-      - {label: "Heading", name: "heading", widget: "text", required: false}
-      - {label: "Background image", name: "background_image", widget: "image", required: false}
-      - {label: "Image", name: "image", widget: "image", required: false}
-      - {label: "Button text", name: "button_text", widget: "text", required: false}
-      - {label: "Button href", name: "button_href", widget: "text", required: false}
-      - name: sections
-        label: Sections
-        label_singular: "Section"
-        widget: list
+  - name: "Website Sections"
+    label: "Website Sections"
+    delete: false # Prevent users from deleting documents in this collection
+    editor:
+      preview: false
+    files:
+      - name: "sections"
+        label: "Sections"
+        file: "_data/sections.yml"
+        description: "Website sections"
         fields:
-          - {label: "Type", name: "type", widget: "select", options: ["Text splash", "Three piece", "Testimonials", "Tiles", "image splash", "faq"]}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Markdown", name: "markdown", widget: "markdown"}
-          - {label: "Image", name: "image", widget: "image"}
+          - {label: "Title", name: "title", widget: "string", required: false}
+          - {label: "Heading", name: "heading", widget: "text", required: false}
+          - {label: "Background image", name: "background_image", widget: "image", required: false}
+          - {label: "Image", name: "image", widget: "image", required: false}
+          - {label: "Button text", name: "button_text", widget: "text", required: false}
+          - {label: "Button href", name: "button_href", widget: "text", required: false}
+          - name: sections
+            label: Sections
+            label_singular: "Section"
+            widget: list
+            fields:
+              - {label: "Type", name: "type", widget: "select", options: ["Text splash", "Three piece", "Testimonials", "Tiles", "image splash", "faq"]}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Markdown", name: "markdown", widget: "markdown"}
+              - {label: "Image", name: "image", widget: "image"}
 
   - name: "settings"
     label: "Settings"
