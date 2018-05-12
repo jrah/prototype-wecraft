@@ -38,15 +38,17 @@ collections: # A list of collections the CMS should be able to edit
       - name: "sections"
         label: "Sections"
         file: "_data/sections.yml"
-        description: "Author descriptions"
+        description: "Website sections"
         fields:
           - name: sections
             label: Sections
-            label_singular: "Author"
+            label_singular: "Section"
             widget: list
             fields:
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Description", name: "description", widget: "markdown"}
+              - {label: "Type", name: "select", widget: "select", options: ["Text splash", "Three piece", "Testimonials", "Tiles", "image splash", "faq"]}
+              - {label: "Title", name: "string", widget: "string"}
+              - {label: "Markdown", name: "markdown", widget: "markdown"}
+              - {label: "Image", name: "image", widget: "image"}
 
   - name: "kitchenSink" # all the things in one entry, for documentation and quick testing
     label: "Kitchen Sink"
