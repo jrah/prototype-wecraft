@@ -6,13 +6,32 @@ media_folder: "images" # Folder where user uploaded files should go
 public_folder: "/images"
 
 collections: # A list of collections the CMS should be able to edit
-  - name: "faq" # Used in routes, ie.: /admin/collections/:slug/edit
-    label: "FAQ" # Used in the UI
-    folder: "_faqs"
-    create: true # Allow users to create new documents in this collection
-    fields: # The fields each document in this collection have
-      - {label: "Question", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Answer", name: "body", widget: "markdown"}
+  - name: "Website Sections"
+    label: "Website Sections"
+    delete: false # Prevent users from deleting documents in this collection
+    editor:
+      preview: false
+    files:
+      - name: "sections"
+        label: "Sections"
+        file: "_data/sections.yml"
+        description: "Website sections"
+        fields:
+          - {label: "Title", name: "string", widget: "string", required: false}
+          - {label: "Heading", name: "text", widget: "text", required: false}
+          - {label: "Background image", name: "background_image", widget: "image", required: false}
+          - {label: "Image", name: "image", widget: "image", required: false}
+          - {label: "Button text", name: "button_text", widget: "text", required: false}
+          - {label: "Button href", name: "button_href", widget: "text", required: false}
+          - name: sections
+            label: Sections
+            label_singular: "Section"
+            widget: list
+            fields:
+              - {label: "Type", name: "select", widget: "select", options: ["Text splash", "Three piece", "Testimonials", "Tiles", "image splash", "faq"]}
+              - {label: "Title", name: "string", widget: "string"}
+              - {label: "Markdown", name: "markdown", widget: "markdown"}
+              - {label: "Image", name: "image", widget: "image"}
 
   - name: "settings"
     label: "Settings"
