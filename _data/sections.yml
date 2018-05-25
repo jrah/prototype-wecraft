@@ -4,10 +4,6 @@ background_image: /images/rendra-diardjo-221782-unsplash.jpg
 button_text: Button text
 button_href: 'mailto:james@diversitea.co'
 sections:
-  - image: /images/rendra-diardjo-221782-unsplash.jpg
-    markdown: Text splash content
-    title: Text splash
-    type: image splash
   - markdown: |-
       ![](/images/noun_1573360.svg)
 
@@ -20,3 +16,7 @@ sections:
       Text below
       ===
     type: Three piece
+  - image: /images/rendra-diardjo-221782-unsplash.jpg
+    markdown: Text splash content
+    title: Text splash
+    type: image splash
